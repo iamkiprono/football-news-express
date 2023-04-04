@@ -24,7 +24,7 @@ app.post("/news", async (req, res) => {
  
   try {
     await connection.query(q);
-    res.json("Added");
+    res.json(`Added ${news}`);
   } catch (error) {
     console.log(error);
   }
