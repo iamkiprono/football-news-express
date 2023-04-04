@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5174/" || "https://full-time-360.netlify.app/",
+    origin: "http://localhost:5174/",
   })
 );
 
@@ -16,8 +16,6 @@ const connection = mysql
   )
   .promise();
 app.use(express.json());
-
-
 app.get("/", async (req, res) => {
   try {
     const results = await connection.query("select * from Persons");
