@@ -51,5 +51,5 @@ app.delete("/news/:id", async (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log("3001");
+  console.log("Listening on 3001");
 });
