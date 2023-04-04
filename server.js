@@ -5,7 +5,7 @@ const mysql = require("mysql2");
 const app = express();
 
 
-const connection = mysql.createConnection(process.env.DATABASE_URL).promise();
+const connection = mysql.createConnection(`mysql://wpcemnt3x2xqwddss8wh:pscale_pw_8M3702RzJxk2rj9wnblKEXqbQG16qc2p4Dk1NerzkBJ@aws.connect.psdb.cloud/football?ssl={"rejectUnauthorized":true}`).promise();
 app.use(express.json());
 app.get("/", async (req, res) => {
   try {
