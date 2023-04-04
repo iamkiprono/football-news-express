@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "https://full-time-360.netlify.app/" || "http://localhost:5174/",
+    origin: "http://localhost:5174/" || "https://full-time-360.netlify.app/",
   })
 );
 
@@ -16,6 +16,8 @@ const connection = mysql
   )
   .promise();
 app.use(express.json());
+
+
 app.get("/", async (req, res) => {
   try {
     const results = await connection.query("select * from Persons");
@@ -26,7 +28,7 @@ app.get("/", async (req, res) => {
     }
   }
 });
-// 
+//
 app.post("/news", async (req, res) => {
   const { id, news, details, image, category } = req.body;
   const q = `INSERT INTO Persons(id, news, details, image, category) VALUES('${id}', '${news}', '${details}', '${image}', '${category}')`;
