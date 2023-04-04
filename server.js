@@ -26,7 +26,7 @@ app.get("/", async (req, res) => {
     }
   }
 });
-
+// 
 app.post("/news", async (req, res) => {
   const { id, news, details, image, category } = req.body;
   const q = `INSERT INTO Persons(id, news, details, image, category) VALUES('${id}', '${news}', '${details}', '${image}', '${category}')`;
