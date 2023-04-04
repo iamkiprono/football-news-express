@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "https://full-time-360.netlify.app/",
+    origin: "https://full-time-360.netlify.app/" || "http://localhost:5174/",
   })
 );
 
