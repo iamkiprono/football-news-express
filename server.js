@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 const connection = mysql
   .createConnection(
-    `mysql://q2uunvwvulu20wo6w5j3:pscale_pw_Ssnk1L21f9CJV7bhN3LjTtqee16nigfvQgmBncPWTt@aws.connect.psdb.cloud/football?ssl={"rejectUnauthorized":true}`
+    `mysql://gknscpk7ooicewqmhh2a:pscale_pw_VwKRCxAMXA3IRKMBhgbjCXP9AXgJgAXFx6E6IXeSImE@aws.connect.psdb.cloud/football?ssl={"rejectUnauthorized":true}`
   )
   .promise();
 app.use(express.json());
