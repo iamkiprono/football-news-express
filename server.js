@@ -4,12 +4,7 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:5174/",
-  })
-);
-
+app.use(cors());
 const connection = mysql
   .createConnection(
     `mysql://wpcemnt3x2xqwddss8wh:pscale_pw_8M3702RzJxk2rj9wnblKEXqbQG16qc2p4Dk1NerzkBJ@aws.connect.psdb.cloud/football?ssl={"rejectUnauthorized":true}`
@@ -32,6 +27,10 @@ app.post("/news", async (req, res) => {
   const q = `INSERT INTO Persons(id, news, details, image, category) VALUES('${id}', '${news}', '${details}', '${image}', '${category}')`;
 
   try {
+    if (!news) {
+      res.status(400).send("cannot be blank");
+      return;
+    }
     await connection.query(q);
     res.json(`Added ${news}`);
   } catch (error) {
